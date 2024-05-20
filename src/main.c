@@ -6,7 +6,7 @@
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 14:24:39 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/20 15:16:41 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/20 22:08:45 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,6 @@ int main(int argc, char **argv)
 	{
 		ft_printf("wowzies");
 	}
+	char *str = "%%%%hello world:%d%s%g%a:%s%%%c%x";
+	printf("str: %s\nargs: %ld\n", str, args_count(str));
 }
