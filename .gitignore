@@ -1,0 +1,17 @@
+*/*.out
+*/*.gch
+*/*.o
+*/*.so
+*/*.a
+*/*.a
+*.a
+main
+.cache
+put*.txt
+libftTester
+libft-war-machine
+libft-unit-test
+*.o
+*.out
+*.so
+.vscode
