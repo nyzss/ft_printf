@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/20 14:27:41 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/21 16:15:46 by okoca            ###   ########.fr       */
+/*   Created: 2024/05/21 16:11:00 by okoca             #+#    #+#             */
+/*   Updated: 2024/05/21 16:19:29 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-# include <stdarg.h>
-# include "libft.h"
+#include <ft_printf.h>
 
-int		ft_printf(const char *str, ...);
+void	print_args(int *args, int count)
+{
+	int	i;
 
-char	**parse(const char *str);
-
-int		*args_count(const char*str, int *count);
-
-int		is_set(char c, char *set);
-
-void	print_args(int *args, int count);
-
-#endif
+	i = 0;
+	while (i < count)
+	{
+		ft_putnbr_fd(args[i], 1);
+		ft_putchar_fd('\n', 1);
+		i++;
+	}
+}

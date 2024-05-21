@@ -6,7 +6,7 @@
 #    By: okoca <okoca@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/20 14:28:24 by okoca             #+#    #+#              #
-#    Updated: 2024/05/20 22:09:30 by okoca            ###   ########.fr        #
+#    Updated: 2024/05/21 16:17:36 by okoca            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ LDFLAGS = -L${LIBFT} -lft
 
 SRC_FILES = main.c \
 	parse.c \
+	utils.c \
 
 NAME = libftprintf.a
 
