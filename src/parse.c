@@ -6,7 +6,7 @@
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 15:04:58 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/22 22:28:57 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/22 22:49:24 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ int	*args_count(const char *str, int *count)
 		}
 		i++;
 	}
-	// flags[*count] = -1;
 	return (flags);
 }
 
