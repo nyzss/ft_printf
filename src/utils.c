@@ -6,11 +6,11 @@
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 16:11:00 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/21 16:19:29 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/22 22:11:51 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_printf.h>
+#include "ft_printf.h"
 
 void	print_args(int *args, int count)
 {
@@ -23,4 +23,27 @@ void	print_args(int *args, int count)
 		ft_putchar_fd('\n', 1);
 		i++;
 	}
+}
+
+void	putn(long num, char *base)
+{
+	int	base_size;
+
+	base_size = ft_strlen(base);
+	if (num > (base_size - 1))
+		putn(num / base_size, base);
+	ft_putchar_fd(base[num % base_size], 1);
+}
+
+void	ft_putnbr_base(int nbr, char *base)
+{
+	long	num;
+
+	num = nbr;
+	if (num < 0)
+	{
+		num *= -1;
+		ft_putchar_fd('-', 1);
+	}
+	putn(num, base);
 }

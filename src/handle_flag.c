@@ -6,11 +6,11 @@
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 10:27:23 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/22 12:36:51 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/22 22:12:16 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_printf.h>
+#include "ft_printf.h"
 
 void	*flag_func(int *flags_list, int number_of_flags, int current_flag)
 {
@@ -25,4 +25,5 @@ void	*flag_func(int *flags_list, int number_of_flags, int current_flag)
 			return (flag_functions[i]);
 		i++;
 	}
+	return (NULL);
 }

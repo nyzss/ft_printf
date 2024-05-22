@@ -6,7 +6,7 @@
 #    By: okoca <okoca@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/20 14:28:24 by okoca             #+#    #+#              #
-#    Updated: 2024/05/21 16:17:36 by okoca            ###   ########.fr        #
+#    Updated: 2024/05/22 22:19:16 by okoca            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,13 +16,17 @@ SRC_DIR = ./src/
 
 INCLUDES_DIR = ./includes/
 
-CFLAGS = -Wall -Werror -Wextra -I${INCLUDES_DIR} -I${LIBFT}/includes
+LIBFT = libft
+
+CFLAGS = -Wall -Werror -Wextra -I${INCLUDES_DIR} -I${LIBFT}
 
 LDFLAGS = -L${LIBFT} -lft
 
-SRC_FILES = main.c \
+SRC_FILES = ft_printf.c \
 	parse.c \
 	utils.c \
+	handle_flag.c \
+	main_flags.c \
 
 NAME = libftprintf.a
 
@@ -30,9 +34,7 @@ SRC = ${addprefix ${SRC_DIR}, ${SRC_FILES}}
 
 OBJS = ${SRC:.c=.o}
 
-EXEC = ft_printf.out
-
-LIBFT = libft
+EXEC = a.out
 
 %.o: %.c
 	${CC} ${CFLAGS} ${LDFLAGS} -c $< -o ${<:.c=.o}
@@ -43,20 +45,9 @@ ${NAME}: ${OBJS}
 	mv libft.a ${NAME}
 	ar rcs ${NAME} ${OBJS}
 
-${EXEC}: ${OBJS}
+${EXEC}: ${NAME}
 	make -C ${LIBFT}
-	cp ${LIBFT}/libft.a libft.a
-	${CC} ${CLFLAGS} ${OBJS} ${LDFLAGS} -o ${EXEC}
-
-# ${NAME}: ${OBJS}
-# 	make -C ${LIBFT}
-# 	cp ${LIBFT}/libft.a ./${NAME}
-# 	ar rcs ${NAME} ${OBJS}
-
-# ${EXEC}: ${OBJS}
-# 	make -C ${LIBFT}
-# 	cp ${LIBFT}/libft.a ./libft.a
-# 	${CC} ${CLFLAGS} ${LDFLAGS} ${OBJS} -o ${EXEC}
+	${CC} ${CFLAGS} src/main.c  -L. -lftprintf -o ${EXEC}
 
 all: ${NAME}
 
