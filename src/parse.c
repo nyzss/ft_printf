@@ -6,7 +6,7 @@
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 15:04:58 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/22 12:08:11 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/22 22:28:57 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,15 @@ int	is_set(char c, char *set)
 			return (i);
 		i++;
 	}
-	// free(set);
 	return (0);
 }
 
-int	*args_count(const char*str, int *count)
+int	*args_count(const char *str, int *count)
 {
 	size_t	i;
 	int		*flags;
 	char	*set;
+	printf("here");
 
 	i = 0;
 	set = ft_strdup("cspdiuxX%");
@@ -44,6 +44,8 @@ int	*args_count(const char*str, int *count)
 	}
 	i = 0;
 	flags = (int *)malloc(sizeof(int) * (ft_strlen(set) + 1));
+	if (!flags)
+		return (NULL);
 	while (str[i])
 	{
 		if ((str[i] == '%' && is_set(str[i + 1], set)))
@@ -55,7 +57,7 @@ int	*args_count(const char*str, int *count)
 		}
 		i++;
 	}
-	flags[*count] = -1;
+	// flags[*count] = -1;
 	return (flags);
 }
 

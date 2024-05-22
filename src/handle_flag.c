@@ -6,7 +6,7 @@
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 10:27:23 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/22 22:12:16 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/22 22:22:26 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	*flag_func(int *flags_list, int number_of_flags, int current_flag)
 
 	i = 0;
 	flag_functions[0] = c_flag;
+	flag_functions[1] = s_flag;
 	while (i < number_of_flags)
 	{
 		if (current_flag == flags_list[i])

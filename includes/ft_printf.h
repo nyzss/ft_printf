@@ -6,7 +6,7 @@
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 14:27:41 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/22 22:06:49 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/22 22:22:46 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 int		ft_printf(const char *str, ...);
 
-char	**parse(const char *str);
+// char	**parse(const char *str);
 
 int		*args_count(const char*str, int *count);
 
