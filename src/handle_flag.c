@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   handle_flag.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/20 14:27:41 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/22 12:38:51 by okoca            ###   ########.fr       */
+/*   Created: 2024/05/22 10:27:23 by okoca             #+#    #+#             */
+/*   Updated: 2024/05/22 12:36:51 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-# include <stdarg.h>
-# include "libft.h"
+#include <ft_printf.h>
 
-int		ft_printf(const char *str, ...);
+void	*flag_func(int *flags_list, int number_of_flags, int current_flag)
+{
+	int		i;
+	void	(*flag_functions[9]);
 
-char	**parse(const char *str);
-
-int		*args_count(const char*str, int *count);
-
-int		is_set(char c, char *set);
-
-void	print_args(int *args, int count);
-
-void	*flag_func(int *flags_list, int number_of_flags, int current_flag);
-
-void	c_flag(char c);
-
-#endif
+	i = 0;
+	flag_functions[0] = c_flag;
+	while (i < number_of_flags)
+	{
+		if (current_flag == flags_list[i])
+			return (flag_functions[i]);
+		i++;
+	}
+}

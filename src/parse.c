@@ -6,7 +6,7 @@
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 15:04:58 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/21 16:29:36 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/22 12:08:11 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,12 @@ int	*args_count(const char*str, int *count)
 
 	i = 0;
 	set = ft_strdup("cspdiuxX%");
+	while (i < ft_strlen(set))
+	{
+		printf("%c: %ld\n", set[i], i);
+		i++;
+	}
+	i = 0;
 	flags = (int *)malloc(sizeof(int) * (ft_strlen(set) + 1));
 	while (str[i])
 	{
@@ -44,7 +50,7 @@ int	*args_count(const char*str, int *count)
 		{
 			if (str[i - 1] == '%' && str[i] == '%' && i != 0)
 				i++;
-			flags[*count] = i;
+			flags[*count] = is_set(str[i + 1], set);
 			*count = *count + 1;
 		}
 		i++;

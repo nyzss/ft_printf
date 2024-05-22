@@ -1,32 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   main_flags.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/20 14:27:41 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/22 12:38:51 by okoca            ###   ########.fr       */
+/*   Created: 2024/05/22 12:20:40 by okoca             #+#    #+#             */
+/*   Updated: 2024/05/22 12:31:00 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-# include <stdarg.h>
-# include "libft.h"
-
-int		ft_printf(const char *str, ...);
-
-char	**parse(const char *str);
-
-int		*args_count(const char*str, int *count);
-
-int		is_set(char c, char *set);
-
-void	print_args(int *args, int count);
-
-void	*flag_func(int *flags_list, int number_of_flags, int current_flag);
-
-void	c_flag(char c);
-
-#endif
+void	c_flag(char c)
+{
+	ft_putchar_fd(c, 1);
+}
