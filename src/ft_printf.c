@@ -6,7 +6,7 @@
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 14:24:39 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/22 22:50:27 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/23 10:22:23 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,15 @@ int	ft_printf(const char *str, ...)
 	int		*list_of_args;
 	size_t	counter;
 	int		number_of_args;
+	size_t	i;
+	size_t	j;
+	void	(*flag_functions[9])(va_list);
 
+	flag_functions[0] = c_flag;
+	flag_functions[1] = s_flag;
+	flag_functions[2] = p_flag;
+	i = 0;
+	j = 0;
 	counter = 0;
 	printf("placeholder %ld\n", counter);
 	list_of_args = args_count(str, &number_of_args);
@@ -28,7 +36,23 @@ int	ft_printf(const char *str, ...)
 	va_start(args, str);
 	while (counter < number_of_args)
 	{
-
+		while (str[i])
+		{
+			if (str[i] == '%' && (is_set(str[i + 1])))
+			{
+				if (i != 0 && str[i - 1] == '%')
+					i++;
+				while (j < number_of_args)
+				{
+					if (is_set(str[j + 1]) == list_of_args[j])
+						(*flag_functions[j])(args);
+					j++;
+				}
+				i++;
+			}
+			ft_putchar_fd(str[i], 1);
+			i++;
+		}
 		counter++;
 	}
 	va_end(args);
