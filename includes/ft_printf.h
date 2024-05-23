@@ -6,15 +6,12 @@
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 14:27:41 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/23 21:45:34 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/23 21:48:07 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
-# define NUMBER_OF_FLAGS 9
-# define UNSIGNED 1
-# define SIGNED 0
 # include <stdarg.h>
 # include "libft.h"
 
