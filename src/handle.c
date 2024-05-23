@@ -6,7 +6,7 @@
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 16:37:31 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/23 16:57:53 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/23 20:57:30 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,13 @@ int	handle_flags(va_list args, char c)
 		c_flag(args);
 	else if (c == 's')
 		s_flag(args);
-	else if (c == '%')
-		ft_putchar_fd('%', 1);
 	else if (c == 'd')
 		d_flag(args);
 	else if (c == 'p')
 		p_flag(args);
+	else if (c == 'i')
+		d_flag(args);
+	else if (c == '%')
+		ft_putchar_fd('%', 1);
 	return (1);
 }
