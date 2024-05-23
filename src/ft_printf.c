@@ -6,7 +6,7 @@
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 14:24:39 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/23 10:22:23 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/23 10:47:30 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_printf(const char *str, ...)
 	va_list	args;
 	int		*list_of_args;
 	size_t	counter;
-	int		number_of_args;
+	size_t		number_of_args;
 	size_t	i;
 	size_t	j;
 	void	(*flag_functions[9])(va_list);

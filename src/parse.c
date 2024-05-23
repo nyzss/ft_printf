@@ -6,7 +6,7 @@
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 15:04:58 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/23 09:54:46 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/23 10:47:47 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	is_set(char c)
 	return (0);
 }
 
-int	*args_count(const char *str, int *count)
+int	*args_count(const char *str, size_t *count)
 {
 	size_t	i;
 	int		*flags;

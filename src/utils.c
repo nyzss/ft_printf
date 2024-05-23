@@ -6,15 +6,15 @@
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 16:11:00 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/22 22:11:51 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/23 10:54:58 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	print_args(int *args, int count)
+void	print_args(int *args, size_t count)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (i < count)

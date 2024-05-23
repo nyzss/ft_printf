@@ -6,7 +6,7 @@
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 22:17:06 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/22 22:31:22 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/23 10:55:07 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 
 int main()
 {
-	char *str = "%%%%hello world:%d%s%g%a:%s%%%c%x";
-	ft_printf(str);
+	// char *str = "%%%%hello world:%d%s%g%a:%s%%%c%x";
+	ft_printf("%cwow%c", 'U', 'U');
 }
