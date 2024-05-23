@@ -6,7 +6,7 @@
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 12:20:40 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/23 21:55:41 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/23 22:06:42 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,13 +72,21 @@ int	u_flag(va_list args)
 int	x_flag(va_list args)
 {
 	int	d;
+	int	count;
+
+	count = 0;
 	d = va_arg(args, int);
-	return (ft_putnbr_base(d, "0123456789abcdef"));
+	putn((unsigned int)d, "0123456789abcdef", &count);
+	return (count);
 }
 
 int	big_x_flag(va_list args)
 {
 	int	d;
+	int	count;
+
+	count = 0;
 	d = va_arg(args, int);
-	return (ft_putnbr_base(d, "0123456789ABCDEF"));
+	putn((unsigned int)d, "0123456789ABCDEF", &count);
+	return (count);
 }
