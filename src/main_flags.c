@@ -6,7 +6,7 @@
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 12:20:40 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/23 22:06:42 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/23 22:57:20 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,19 +36,28 @@ int	s_flag(va_list args)
 	char	*str;
 
 	str = va_arg(args, char *);
+	if (!str)
+		return(0);
 	ft_putstr_fd(str, 1);
 	return (ft_strlen(str));
 }
 
+//count = 2 for (0x) prefix len
 int	p_flag(va_list args)
 {
 	void*	ptr;
-	int		ptr_prefix_len;
+	int		count;
 
-	ptr_prefix_len = 2;
+	count = 2;
 	ptr = va_arg(args, void *);
+	if (!ptr)
+	{
+		ft_putstr_fd("(nil)", 1);
+		return (5);
+	}
 	ft_putstr_fd("0x", 1);
-	return (ft_putnbr_base((unsigned long)(ptr), "0123456789abcdef") + ptr_prefix_len);
+	putn((unsigned long)(ptr), "0123456789abcdef", &count);
+	return (count);
 }
 int	d_flag(va_list args)
 {
