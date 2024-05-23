@@ -6,7 +6,7 @@
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 16:37:31 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/23 21:47:17 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/23 21:54:27 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,10 @@ int	handle_flags(va_list args, char c)
 		printed_char += d_flag(args);
 	else if (c == 'u')
 		printed_char += u_flag(args);
+	else if (c == 'x')
+		printed_char += x_flag(args);
+	else if (c == 'X')
+		printed_char += big_x_flag(args);
 	else if (c == '%')
 	{
 		ft_putchar_fd('%', 1);

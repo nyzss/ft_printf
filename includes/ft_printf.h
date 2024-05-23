@@ -6,7 +6,7 @@
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 14:27:41 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/23 21:48:07 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/23 21:56:01 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,9 @@ int		p_flag(va_list args);
 int		d_flag(va_list args);
 
 int		u_flag(va_list args);
+
+int		x_flag(va_list args);
+
+int		big_x_flag(va_list args);
 
 #endif
