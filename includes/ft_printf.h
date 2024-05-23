@@ -6,7 +6,7 @@
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 14:27:41 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/23 16:57:32 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/23 21:11:38 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void	print_args(int *args, size_t count);
 
 void	ft_putnbr_base(int nbr, char *base);
 
+void	putn(long num, char *base);
+
 void	c_flag(va_list args);
 
 void	s_flag(va_list args);
@@ -31,5 +33,7 @@ void	s_flag(va_list args);
 void	p_flag(va_list args);
 
 void	d_flag(va_list args);
+
+void	u_flag(va_list args);
 
 #endif

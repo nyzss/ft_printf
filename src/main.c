@@ -6,23 +6,36 @@
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 22:17:06 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/23 21:03:05 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/23 21:19:46 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdio.h>
 
+//	c\s\p\d\i\u\x\X\%
 int main()
 {
-	// char	*test_str = "%cwow%c, %c, %s, %s, %%\n";
-	char	*test_str2 = "number: %d\nstring: %s\npointer: %p\n";
-	int		*wow = (int*)1500;
+	char	*test_str2 = "char: %c\nstring: %s\npointer: %p\nnumber: %d\ninteger: %i\nunsigned: %u\n";
 
-	// printf("string: %s\n", test_str);
-	// ft_printf(test_str, 'U', 'U', 'W', "wowzies", "placeholder");
+	char			c = 'W';
+
+	char			*str = "hello world!s!";
+
+	int				*ptr = (int*)1500;
+
+	int				num = 2147483647;
+
+	long			big_num = 21474836481;
+
+	unsigned int	u_num = 3147483647;
+
+	int				return_ftprintf;
+	int				return_printf;
+
 	printf("\n-------------MINE-------------\n");
-	ft_printf(test_str2, 21474836481, "wow second string its cool", wow);
+	return_ftprintf = ft_printf(test_str2, c, str, ptr, big_num, num, u_num - u_num - 1);
 	printf("\n-------------REAL-------------\n");
-	printf(test_str2, 21474836481, "wow second string its cool", wow);
+	return_printf = printf(test_str2, c, str, ptr, big_num, num, u_num - u_num - 1);
+	printf("\n\nreal: %d\nmine: %d\n", return_printf, return_ftprintf);
 }
