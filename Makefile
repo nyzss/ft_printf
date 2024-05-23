@@ -6,7 +6,7 @@
 #    By: okoca <okoca@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/20 14:28:24 by okoca             #+#    #+#              #
-#    Updated: 2024/05/23 13:45:44 by okoca            ###   ########.fr        #
+#    Updated: 2024/05/23 16:41:32 by okoca            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,9 +23,8 @@ CFLAGS = -Wall -Werror -Wextra -I${INCLUDES_DIR} -I${LIBFT}
 LDFLAGS = -L${LIBFT} -lft
 
 SRC_FILES = ft_printf.c \
-	handle_flag.c \
+	handle.c \
 	main_flags.c \
-	parse.c \
 	utils.c
 
 NAME = libftprintf.a

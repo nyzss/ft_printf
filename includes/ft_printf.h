@@ -6,7 +6,7 @@
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 14:27:41 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/23 13:49:53 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/23 16:57:32 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,9 @@
 
 int		ft_printf(const char *str, ...);
 
-int		*args_count(const char*str, size_t *count);
-
-int		is_set(char c);
+int		handle_flags(va_list args, char c);
 
 void	print_args(int *args, size_t count);
-
-void	*flag_func(int *flags_list, int number_of_flags, int current_flag);
 
 void	ft_putnbr_base(int nbr, char *base);
 
@@ -33,5 +29,7 @@ void	c_flag(va_list args);
 void	s_flag(va_list args);
 
 void	p_flag(va_list args);
+
+void	d_flag(va_list args);
 
 #endif

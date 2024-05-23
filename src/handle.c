@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_flag.c                                      :+:      :+:    :+:   */
+/*   handle.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/22 10:27:23 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/23 14:56:18 by okoca            ###   ########.fr       */
+/*   Created: 2024/05/23 16:37:31 by okoca             #+#    #+#             */
+/*   Updated: 2024/05/23 16:57:53 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	*flag_func(int *flags_list, int number_of_flags, int current_flag)
+int	handle_flags(va_list args, char c)
 {
-	int		i;
-	void	(*flag_functions[9]);
-
-	i = 0;
-	flag_functions[0] = c_flag;
-	flag_functions[1] = s_flag;
-	flag_functions[2] = p_flag;
-	while (i < number_of_flags)
-	{
-		if (current_flag == flags_list[i])
-			return (flag_functions[i]);
-		i++;
-	}
-	return (NULL);
+//	cspdiuxX%
+	if (c == 'c')
+		c_flag(args);
+	else if (c == 's')
+		s_flag(args);
+	else if (c == '%')
+		ft_putchar_fd('%', 1);
+	else if (c == 'd')
+		d_flag(args);
+	else if (c == 'p')
+		p_flag(args);
+	return (1);
 }
