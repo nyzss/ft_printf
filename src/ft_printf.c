@@ -6,7 +6,7 @@
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 15:17:17 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/23 16:47:35 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/23 21:38:30 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,16 @@ int		ft_printf(const char *str, ...)
 {
 	va_list	args;
 	int		i;
+	int		printed_char_nb;
 
 	i = 0;
+	printed_char_nb = 0;
 	va_start(args, str);
 	while (str[i])
 	{
 		if (str[i] == '%')
 		{
-			handle_flags(args, str[i + 1]);
+			printed_char_nb += handle_flags(args, str[i + 1]);
 			i++;
 		}
 		else
@@ -31,5 +33,5 @@ int		ft_printf(const char *str, ...)
 		i++;
 	}
 	va_end(args);
-	return (1);
+	return (printed_char_nb);
 }

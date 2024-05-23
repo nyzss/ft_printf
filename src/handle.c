@@ -6,7 +6,7 @@
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 16:37:31 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/23 21:11:25 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/23 21:47:17 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,26 @@
 
 int	handle_flags(va_list args, char c)
 {
+	int	printed_char;
 //	c\s\p\d\i\u\x\X\%
+	printed_char = 0;
 	if (c == 'c')
-		c_flag(args);
+		printed_char += c_flag(args);
 	else if (c == 's')
-		s_flag(args);
+		printed_char += s_flag(args);
 	else if (c == 'd')
-		d_flag(args);
+		printed_char += d_flag(args);
 	else if (c == 'p')
-		p_flag(args);
+		printed_char += p_flag(args);
 	else if (c == 'i')
-		d_flag(args);
+		printed_char += d_flag(args);
 	else if (c == 'u')
-		u_flag(args);
+		printed_char += u_flag(args);
 	else if (c == '%')
+	{
 		ft_putchar_fd('%', 1);
-	return (1);
+		printed_char++;
+	}
+	printf("\n\nflag: %c, printed char: %d\n\n", c, printed_char);
+	return (printed_char);
 }

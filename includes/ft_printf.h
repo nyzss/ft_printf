@@ -6,15 +6,21 @@
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 14:27:41 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/23 21:11:38 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/23 21:45:34 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 # define NUMBER_OF_FLAGS 9
+# define UNSIGNED 1
+# define SIGNED 0
 # include <stdarg.h>
 # include "libft.h"
+
+//REMOVE
+# include <stdio.h>
+//REMOVE
 
 int		ft_printf(const char *str, ...);
 
@@ -22,18 +28,18 @@ int		handle_flags(va_list args, char c);
 
 void	print_args(int *args, size_t count);
 
-void	ft_putnbr_base(int nbr, char *base);
+int	ft_putnbr_base(int nbr, char *base);
 
-void	putn(long num, char *base);
+void	putn(long num, char *base, int *count);
 
-void	c_flag(va_list args);
+int		c_flag(va_list args);
 
-void	s_flag(va_list args);
+int		s_flag(va_list args);
 
-void	p_flag(va_list args);
+int		p_flag(va_list args);
 
-void	d_flag(va_list args);
+int		d_flag(va_list args);
 
-void	u_flag(va_list args);
+int		u_flag(va_list args);
 
 #endif
