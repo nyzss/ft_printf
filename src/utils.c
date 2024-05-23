@@ -6,7 +6,7 @@
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 16:11:00 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/23 21:46:00 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/23 23:06:24 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ void	print_args(int *args, size_t count)
 	}
 }
 
-void	putn(long num, char *base, int *count)
+void	putn(unsigned long num, char *base, int *count)
 {
-	int	base_size;
+	unsigned	base_size;
 
 	base_size = ft_strlen(base);
 	if (num > (base_size - 1))

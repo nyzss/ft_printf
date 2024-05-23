@@ -6,12 +6,12 @@
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 22:17:06 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/23 22:57:46 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/23 23:03:10 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
+#include "limits.h"
 
 //	c\s\p\d\i\u\x\X\%
 int main()
@@ -36,8 +36,8 @@ int main()
 	int				return_printf;
 
 	printf("\n-------------MINE-------------\n");
-	return_ftprintf = ft_printf(test_str2, c, str, 0, big_num, num, u_num - u_num - 1, num, big_hexa);
+	return_ftprintf = ft_printf(test_str2, c, str, LONG_MIN, big_num, num, u_num - u_num - 1, num, big_hexa);
 	printf("\n-------------REAL-------------\n");
-	return_printf = printf(test_str2, c, str, 0, big_num, num, u_num - u_num - 1, num, big_hexa);
+	return_printf = printf(test_str2, c, str, LONG_MIN, big_num, num, u_num - u_num - 1, num, big_hexa);
 	printf("\n\nreal: %d\nmine: %d\n", return_printf, return_ftprintf);
 }

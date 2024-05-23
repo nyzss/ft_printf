@@ -6,7 +6,7 @@
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 14:27:41 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/23 21:56:01 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/23 23:06:03 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	print_args(int *args, size_t count);
 
 int	ft_putnbr_base(int nbr, char *base);
 
-void	putn(long num, char *base, int *count);
+void	putn(unsigned long num, char *base, int *count);
 
 int		c_flag(va_list args);
 
