@@ -6,7 +6,7 @@
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 12:20:40 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/23 23:06:35 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/24 08:21:46 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ int	s_flag(va_list args)
 	str = va_arg(args, char *);
 	if (!str)
 	{
-		ft_putstr_fd("(nil)", 1);
-		return(5);
+		ft_putstr_fd("(null)", 1);
+		return (6);
 	}
 	ft_putstr_fd(str, 1);
 	return (ft_strlen(str));
@@ -59,7 +59,6 @@ int	p_flag(va_list args)
 		return (5);
 	}
 	ft_putstr_fd("0x", 1);
-	// printf("received val: %lu\n", (unsigned long)ptr);
 	putn((unsigned long)(ptr), "0123456789abcdef", &count);
 	return (count);
 }

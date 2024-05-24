@@ -6,13 +6,13 @@
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 15:17:17 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/23 21:50:35 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/24 11:14:35 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_printf(const char *str, ...)
+int	ft_printf(const char *str, ...)
 {
 	va_list	args;
 	int		i;
@@ -20,6 +20,8 @@ int		ft_printf(const char *str, ...)
 
 	i = 0;
 	printed_char_nb = 0;
+	if (!str)
+		return (-1);
 	va_start(args, str);
 	while (str[i])
 	{
